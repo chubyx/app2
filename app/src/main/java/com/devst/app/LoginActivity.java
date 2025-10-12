@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public static class HomeActivity extends AppCompatActivity {
+    public static class HomeActivity extends BaseActivity {
 
         // Variables
         private String emailUsuario = "";
@@ -146,9 +146,8 @@ public class LoginActivity extends AppCompatActivity {
             btnLinterna = findViewById(R.id.btnLinterna);
             Button btnCamara = findViewById(R.id.btnCamara);
             Button btnIrConfig = findViewById(R.id.btnIrConfig);
-
-
-
+            Button btnMaps = findViewById(R.id.btnMaps);
+            Button btnCalendario = findViewById(R.id.btnCalendario);
 
             // Recibir dato del Login
             emailUsuario = getIntent().getStringExtra("email_usuario");
@@ -168,6 +167,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent viewWeb = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(viewWeb);
             });
+
 
             // Evento: Intent implícito → enviar correo
             btnEnviarCorreo.setOnClickListener(v -> {
@@ -191,6 +191,13 @@ public class LoginActivity extends AppCompatActivity {
                 share.putExtra(Intent.EXTRA_TEXT, "Hola desde mi app Android 😎");
                 startActivity(Intent.createChooser(share, "Compartir usando:"));
             });
+            btnMaps.setOnClickListener(v ->
+                    startActivity(new Intent(this, UbicacionActivity.class))
+            );
+            btnCalendario.setOnClickListener(v ->
+                    startActivity(new Intent(this, CalendarioActivity.class))
+            );
+
 
 
             //Linterna Inicializamos la camara

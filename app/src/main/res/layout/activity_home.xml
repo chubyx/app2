@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity$HomeActivity">
 
-    <!-- Barra superior con soporte para menú -->
+    <!-- Barra superior -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,96 +17,147 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/brand_primary"
-            android:title="Menú Principal"
+            android:background="?attr/colorPrimary"
+            android:title="@string/menu_principal"
             android:titleTextColor="@android:color/white"
             app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Contenido desplazable, con padding propio -->
+    <!-- Contenido desplazable -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <!-- Columna simple, centrada y con ancho máximo para que no se estire en tablets -->
         <LinearLayout
-            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
             android:gravity="center_horizontal">
 
-            <!-- Contenedor para limitar el ancho en pantallas grandes -->
-            <LinearLayout
+            <!-- Card de bienvenida -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp">
+                android:layout_marginBottom="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                app:strokeColor="?attr/colorPrimary"
+                app:strokeWidth="1dp">
 
-                <!-- Título -->
                 <TextView
                     android:id="@+id/tvBienvenida"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bienvenido:"
-                    android:textSize="20sp"
+                    android:padding="16dp"
+                    android:text="@string/bienvenido"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_main"/>
+                    android:textColor="?android:textColorPrimary"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                <!-- Botones -->
-                <Button
-                    android:id="@+id/btnIrPerfil"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Ir a Perfil (resultado)"/>
+            <!-- Botones con íconos -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIrPerfil"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ir_perfil"
+                app:icon="@drawable/ic_person"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
 
-                <Button
-                    android:id="@+id/btnAbrirWeb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Abrir sitio web"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAbrirWeb"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/abrir_web"
+                app:icon="@drawable/ic_web"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
 
-                <Button
-                    android:id="@+id/btnEnviarCorreo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Enviar correo"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnviarCorreo"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enviar_correo"
+                app:icon="@drawable/ic_email"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
 
-                <Button
-                    android:id="@+id/btnCompartir"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Compartir texto"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompartir"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/compartir_texto"
+                app:icon="@drawable/ic_share"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
 
-                <Button
-                    android:id="@+id/btnLinterna"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Linterna ON/OFF" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLinterna"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/linterna"
+                app:icon="@drawable/ic_flashlight"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
 
-                <Button
-                    android:id="@+id/btnCamara"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Abrir Cámara"
-                    android:layout_marginTop="12dp"/>
-                <Button
-                    android:id="@+id/btnIrConfig"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Configuraciones"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCamara"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/abrir_camara"
+                app:icon="@drawable/ic_camera"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
 
-            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMaps"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/maps"
+                app:icon="@drawable/ic_maps"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCalendario"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calendario"
+                app:icon="@drawable/ic_calendario"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIrConfig"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/configuraciones"
+                app:icon="@drawable/ic_settings"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginBottom="12dp"/>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

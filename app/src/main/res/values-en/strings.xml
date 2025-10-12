@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">app</string>
+    <string-array name="idiomas_disponibles">
+        <item>Spanish</item>
+        <item>English</item>
+        <item>Portuguese</item>
+        <item>French</item>
+    </string-array>
+    <string name="menu_principal">Main Menu</string>
+    <string name="bienvenido">Welcome:</string>
+    <string name="ir_perfil">Go to Profile (result)</string>
+    <string name="abrir_web">Open website</string>
+    <string name="enviar_correo">Send email</string>
+    <string name="compartir_texto">Share text</string>
+    <string name="linterna">Flashlight ON/OFF</string>
+    <string name="abrir_camara">Open Camera</string>
+    <string name="configuraciones">Settings</string>
+    <string name="preferencias_visualizacion">Display preferences</string>
+    <string name="modo_oscuro">Dark mode 🌙</string>
+    <string name="notificaciones">Notifications</string>
+    <string name="activar_notificaciones">Enable notifications 🔔</string>
+    <string name="actualizaciones">Receive automatic updates</string>
+    <string name="correo_hint">Email for notifications</string>
+    <string name="idioma">Language</string>
+    <string name="cambiar_idioma">Change language 🌐</string>
+    <string name="soporte">Support</string>
+    <string name="llamar_callcenter">Call the Call Center 📞</string>
+    <string name="enviar_sugerencias">Send suggestions 💬</string>
+    <string name="nombre_app">MyApp</string>
+    <string name="login_titulo">Welcome</string>
+    <string name="login_subtitulo">Sign in to continue</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="btn_login">Sign in</string>
+    <string name="olviste_pass">Forgot your password?</string>
+    <string name="no_cuenta">Don\'t have an account?</string>
+    <string name="crear_cuenta">Create account</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">Welcome!</string>
+    <string name="invalid_username">Invalid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">Login failed</string>
+    <string name="maps">Open Maps</string>
+    <string name="calendario">Calendar</string>
+    <string name="btnCerrarSesion">Log Out</string>
+    <string name="btnEditar">Edit Profile</string>
+</resources>

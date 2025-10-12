@@ -33,15 +33,21 @@
             android:name=".PerfilActivity"
             android:exported="false" />
         <activity
+            android:name=".ConfigActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity$HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfigActivity"
+            android:name=".CalendarioActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".UbicacionActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
