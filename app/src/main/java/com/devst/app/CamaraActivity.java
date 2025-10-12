@@ -1,23 +1,21 @@
 package com.devst.app;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,9 +33,9 @@ public class CamaraActivity extends AppCompatActivity {
                 else Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show();
             });
 
-    private final ActivityResultLauncher<Uri> takePictureLauncher =
-            registerForActivityResult(new ActivityResultContracts.TakePicture(), okay -> {
-                if (okay && urlImagen != null) {
+    private final ActivityResultLauncher<Intent> takePictureLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), resultado -> {
+                if (resultado.getResultCode() == RESULT_OK && urlImagen != null) {
                     imagenPrevia.setImageURI(urlImagen);
                     Toast.makeText(this, "Foto guardada", Toast.LENGTH_SHORT).show();
                 } else {
@@ -68,7 +66,17 @@ public class CamaraActivity extends AppCompatActivity {
             File archivoFoto = crearArchivoImagen();
             urlImagen = FileProvider.getUriForFile(
                     this, getPackageName() + ".fileprovider", archivoFoto);
-            takePictureLauncher.launch(urlImagen);
+
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, urlImagen);
+
+            // Intentar forzar cámara frontal (no garantizado)
+            intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
+            intent.putExtra("android.intent.extras.LENS_FACING_FRONT", 1);
+            intent.putExtra("android.intent.extra.USE_FRONT_CAMERA", true);
+
+            takePictureLauncher.launch(intent);
+
         } catch (IOException e) {
             Toast.makeText(this, "No se pudo crear el archivo de imagen", Toast.LENGTH_SHORT).show();
         }
