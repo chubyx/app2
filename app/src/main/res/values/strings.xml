@@ -1,6 +1,31 @@
 <resources>
     <string name="app_name">app</string>
-
+    <string-array name="idiomas_disponibles">
+        <item>Español</item>
+        <item>Inglés</item>
+        <item>Portugués</item>
+        <item>Francés</item>
+    </string-array>
+    <string name="menu_principal">Menú Principal</string>
+    <string name="bienvenido">Bienvenido:</string>
+    <string name="ir_perfil">Ir a Perfil (resultado)</string>
+    <string name="abrir_web">Abrir sitio web</string>
+    <string name="enviar_correo">Enviar correo</string>
+    <string name="compartir_texto">Compartir texto</string>
+    <string name="linterna">Linterna ON/OFF</string>
+    <string name="abrir_camara">Abrir Cámara</string>
+    <string name="configuraciones">Configuraciones</string>
+    <string name="preferencias_visualizacion">Preferencias de visualización</string>
+    <string name="modo_oscuro">Modo oscuro 🌙</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="activar_notificaciones">Activar notificaciones 🔔</string>
+    <string name="actualizaciones">Recibir actualizaciones automáticas</string>
+    <string name="correo_hint">Correo para notificaciones</string>
+    <string name="idioma">Idioma</string>
+    <string name="cambiar_idioma">Cambiar idioma 🌐</string>
+    <string name="soporte">Soporte</string>
+    <string name="llamar_callcenter">Llamar al Call Center 📞</string>
+    <string name="enviar_sugerencias">Enviar sugerencias 💬</string>
     <string name="nombre_app">MiApp</string>
     <string name="login_titulo">Bienvenido</string>
     <string name="login_subtitulo">Inicia sesión para continuar</string>
@@ -19,4 +44,11 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="maps">Abrir Maps</string>
+    <string name="calendario">Calendario</string>
+    <string name="btnCerrarSesion">Cerrar sesión</string>
+    <string name="btnEditar">Editar</string>
+
+
+
 </resources>

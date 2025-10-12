@@ -1,10 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context=".PerfilActivity">
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo_perfil">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Imagen de perfil redondeada -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_usuario"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/CircularImage"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Nombre de Usuario -->
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre Usuario"
+        android:drawableStart="@android:drawable/ic_menu_edit"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Correo -->
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo"
+        android:drawableStart="@android:drawable/ic_dialog_email"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Contraseña -->
+    <EditText
+        android:id="@+id/txtContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:drawableStart="@android:drawable/ic_lock_lock"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Botón editar perfil -->
+        <Button
+            android:id="@+id/btnEditar"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/btnEditar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCorreo" />
+
+    <!-- Botón cerrar sesión -->
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/btnCerrarSesion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnEditar" />
+    </LinearLayout>
+</ScrollView>

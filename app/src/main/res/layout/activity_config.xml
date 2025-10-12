@@ -1,37 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="?android:attr/windowBackground"
     android:padding="16dp">
 
-    <Switch
-        android:id="@+id/switchNotificaciones"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notificaciones"
-        android:checked="false"
-        android:layout_marginBottom="16dp" />
+        android:orientation="vertical">
 
-    <Switch
-        android:id="@+id/switchModoOscuro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Modo oscuro"
-        android:checked="false"
-        android:layout_marginBottom="16dp" />
+        <!-- Sección: Preferencias de visualización -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preferencias_visualizacion"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
 
-    <Button
-        android:id="@+id/btnIdioma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cambiar idioma"
-        android:layout_marginBottom="16dp" />
+        <Switch
+            android:id="@+id/switchModoOscuro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modo_oscuro"
+            android:checked="false"
+            android:layout_marginBottom="16dp" />
 
-    <Button
-        android:id="@+id/btnCallCenter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Llamar al Call Center" />
+        <!-- Sección: Notificaciones -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notificaciones"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
 
-</LinearLayout>
+        <Switch
+            android:id="@+id/switchNotificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activar_notificaciones"
+            android:checked="false"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkActualizaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/actualizaciones"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/correo_hint"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sección: Idioma -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/idioma"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerIdioma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnIdioma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cambiar_idioma"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sección: Soporte -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/soporte"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnCallCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/llamar_callcenter"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnEnviarFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enviar_sugerencias"
+            android:layout_marginBottom="32dp" />
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver al home"
+            android:layout_marginBottom="32dp" />
+
+    </LinearLayout>
+</ScrollView>
