@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public static class HomeActivity extends AppCompatActivity {
+    public static class HomeActivity extends BaseActivity {
 
         // Variables
         private String emailUsuario = "";

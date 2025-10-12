@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">app</string>
+    <string-array name="idiomas_disponibles">
+        <item>Espagnol</item>
+        <item>Anglais</item>
+        <item>Portugais</item>
+        <item>Français</item>
+    </string-array>
+    <string name="menu_principal">Menu Principal</string>
+    <string name="bienvenido">Bienvenue :</string>
+    <string name="ir_perfil">Aller au Profil (résultat)</string>
+    <string name="abrir_web">Ouvrir le site web</string>
+    <string name="enviar_correo">Envoyer un e-mail</string>
+    <string name="compartir_texto">Partager le texte</string>
+    <string name="linterna">Lampe ON/OFF</string>
+    <string name="abrir_camara">Ouvrir la Caméra</string>
+    <string name="configuraciones">Paramètres</string>
+    <string name="preferencias_visualizacion">Préférences d\'affichage</string>
+    <string name="modo_oscuro">Mode sombre 🌙</string>
+    <string name="notificaciones">Notifications</string>
+    <string name="activar_notificaciones">Activer les notifications 🔔</string>
+    <string name="actualizaciones">Recevoir des mises à jour automatiques</string>
+    <string name="correo_hint">Email pour les notifications</string>
+    <string name="idioma">Langue</string>
+    <string name="cambiar_idioma">Changer de langue 🌐</string>
+    <string name="soporte">Support</string>
+    <string name="llamar_callcenter">Appeler le centre d\'appel 📞</string>
+    <string name="enviar_sugerencias">Envoyer des suggestions 💬</string>
+    <string name="nombre_app">MonApp</string>
+    <string name="login_titulo">Bienvenue</string>
+    <string name="login_subtitulo">Connectez-vous pour continuer</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Mot de passe</string>
+    <string name="btn_login">Connexion</string>
+    <string name="olviste_pass">Mot de passe oublié ?</string>
+    <string name="no_cuenta">Pas de compte ?</string>
+    <string name="crear_cuenta">Créer un compte</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Se connecter ou s\'inscrire</string>
+    <string name="action_sign_in_short">Connexion</string>
+    <string name="welcome">Bienvenue !</string>
+    <string name="invalid_username">Nom d\'utilisateur invalide</string>
+    <string name="invalid_password">Le mot de passe doit contenir plus de 5 caractères</string>
+    <string name="login_failed">Échec de la connexion</string>
+</resources>

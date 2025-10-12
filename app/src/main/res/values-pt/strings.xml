@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">app</string>
+    <string-array name="idiomas_disponibles">
+        <item>Espanhol</item>
+        <item>Inglês</item>
+        <item>Português</item>
+        <item>Francês</item>
+    </string-array>
+    <string name="menu_principal">Menu Principal</string>
+    <string name="bienvenido">Bem-vindo:</string>
+    <string name="ir_perfil">Ir para Perfil (resultado)</string>
+    <string name="abrir_web">Abrir site</string>
+    <string name="enviar_correo">Enviar e-mail</string>
+    <string name="compartir_texto">Compartilhar texto</string>
+    <string name="linterna">Lanterna ON/OFF</string>
+    <string name="abrir_camara">Abrir Câmera</string>
+    <string name="configuraciones">Configurações</string>
+    <string name="preferencias_visualizacion">Preferências de exibição</string>
+    <string name="modo_oscuro">Modo escuro 🌙</string>
+    <string name="notificaciones">Notificações</string>
+    <string name="activar_notificaciones">Ativar notificações 🔔</string>
+    <string name="actualizaciones">Receber atualizações automáticas</string>
+    <string name="correo_hint">Email para notificações</string>
+    <string name="idioma">Idioma</string>
+    <string name="cambiar_idioma">Mudar idioma 🌐</string>
+    <string name="soporte">Suporte</string>
+    <string name="llamar_callcenter">Ligar para o Call Center 📞</string>
+    <string name="enviar_sugerencias">Enviar sugestões 💬</string>
+    <string name="nombre_app">MeuApp</string>
+    <string name="login_titulo">Bem-vindo</string>
+    <string name="login_subtitulo">Faça login para continuar</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Senha</string>
+    <string name="btn_login">Entrar</string>
+    <string name="olviste_pass">Esqueceu sua senha?</string>
+    <string name="no_cuenta">Não tem uma conta?</string>
+    <string name="crear_cuenta">Criar conta</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entrar ou registrar</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="welcome">Bem-vindo!</string>
+    <string name="invalid_username">Nome de usuário inválido</string>
+    <string name="invalid_password">A senha deve ter mais de 5 caracteres</string>
+    <string name="login_failed">Falha no login</string>
+</resources>
