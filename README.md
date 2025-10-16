@@ -62,6 +62,7 @@ La app cuenta con una vista principal de **HOME**, desde donde el usuario puede 
 |---------------------|--|
 | ![Maps](screenshots/Maps.png)<br>![OpenMaps](screenshots/OpenMaps.png)| |
 
+## 🧩 Estructura del proyecto
 app/
  ┣ 📂 src/
  ┃ ┣ 📂 main/
