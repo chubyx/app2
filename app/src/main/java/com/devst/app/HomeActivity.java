@@ -2,6 +2,7 @@ package com.devst.app;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
@@ -43,8 +44,12 @@ public class HomeActivity extends AppCompatActivity {
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     String nombre = result.getData().getStringExtra("nombre_editado");
-                    if (nombre != null) {
-                        tvBienvenida.setText("Hola, " + nombre);
+                    if (nombre != null && !nombre.isEmpty()) {
+                        tvBienvenida.setText("Bienvenido: " + nombre);
+
+                        // Guardar el nombre en SharedPreferences
+                        SharedPreferences perfilPrefs = getSharedPreferences("perfil_data", MODE_PRIVATE);
+                        perfilPrefs.edit().putString("nombre", nombre).apply();
                     }
                 }
             });
@@ -85,22 +90,18 @@ public class HomeActivity extends AppCompatActivity {
         emailUsuario = getIntent().getStringExtra("email_usuario");
         if (emailUsuario == null) emailUsuario = "";
         tvBienvenida.setText("Bienvenido: " + emailUsuario);
-
         // Evento: Intent explícito → ProfileActivity (esperando resultado)
         btnIrPerfil.setOnClickListener(v -> {
             Intent i = new Intent(HomeActivity.this, PerfilActivity.class);
             i.putExtra("email_usuario", emailUsuario);
             editarPerfilLauncher.launch(i);
         });
-
         // Evento: Intent implícito → abrir web
         btnAbrirWeb.setOnClickListener(v -> {
             Uri uri = Uri.parse("https://www.santotomas.cl");
             Intent viewWeb = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(viewWeb);
         });
-
-
         // Evento: Intent implícito → enviar correo
         btnEnviarCorreo.setOnClickListener(v -> {
             Intent email = new Intent(Intent.ACTION_SENDTO);
@@ -110,12 +111,10 @@ public class HomeActivity extends AppCompatActivity {
             email.putExtra(Intent.EXTRA_TEXT, "Hola, esto es un intento de correo.");
             startActivity(Intent.createChooser(email, "Enviar correo con:"));
         });
-
         // Evento: Intent implícito → configuraciones
         btnIrConfig.setOnClickListener(v ->
                 startActivity(new Intent(this, ConfigActivity.class))
         );
-
         // Evento: Intent implícito → compartir texto
         btnCompartir.setOnClickListener(v -> {
             Intent share = new Intent(Intent.ACTION_SEND);
@@ -129,9 +128,6 @@ public class HomeActivity extends AppCompatActivity {
         btnCalendario.setOnClickListener(v ->
                 startActivity(new Intent(this, CalendarioActivity.class))
         );
-
-
-
         //Linterna Inicializamos la camara
 
         camara = (CameraManager) getSystemService(CAMERA_SERVICE);
@@ -173,7 +169,22 @@ public class HomeActivity extends AppCompatActivity {
         );
 
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        SharedPreferences perfilPrefs = getSharedPreferences("perfil_data", MODE_PRIVATE);
+        String nombre = perfilPrefs.getString("nombre", null);
+        String correo = perfilPrefs.getString("correo", null);
+
+        if (nombre != null && !nombre.isEmpty()) {
+            tvBienvenida.setText(getString(R.string.bienvenido)  + nombre);
+        } else if (correo != null && !correo.isEmpty()) {
+            tvBienvenida.setText(getString(R.string.bienvenido)  + nombre);
+        } else {
+            tvBienvenida.setText(getString(R.string.bienvenido));
+        }
+    }
     //Linterna
     private void alternarluz() {
         try {
@@ -184,8 +195,6 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(this, "Error al controlar la linterna", Toast.LENGTH_SHORT).show();
         }
     }
-
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -197,8 +206,6 @@ public class HomeActivity extends AppCompatActivity {
             } catch (CameraAccessException ignored) {}
         }
     }
-
-
     // ===== Menú en HomeActivity =====
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

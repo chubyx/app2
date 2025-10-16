@@ -43,7 +43,6 @@ public class ConfigActivity extends AppCompatActivity {
         switchNotificaciones = findViewById(R.id.switchNotificaciones);
         switchModoOscuro = findViewById(R.id.switchModoOscuro);
         checkActualizaciones = findViewById(R.id.checkActualizaciones);
-        editCorreo = findViewById(R.id.editCorreo);
         spinnerIdioma = findViewById(R.id.spinnerIdioma);
         btnIdioma = findViewById(R.id.btnIdioma);
         btnCallCenter = findViewById(R.id.btnCallCenter);
@@ -79,15 +78,7 @@ public class ConfigActivity extends AppCompatActivity {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         });
 
-        // Validar correo ingresado
-        editCorreo.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus) {
-                String correo = editCorreo.getText().toString();
-                if (!correo.contains("@") || !correo.contains(".")) {
-                    Toast.makeText(this, "Correo inválido", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
 
         // Cambiar idioma y aplicar
         btnIdioma.setOnClickListener(v -> {
@@ -106,13 +97,13 @@ public class ConfigActivity extends AppCompatActivity {
         // Llamar al Call Center
         btnCallCenter.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_DIAL);
-            intent.setData(Uri.parse("tel:+56912345678"));
+            intent.setData(Uri.parse("tel:+56923670079"));
             startActivity(intent);
         });
 
         // Enviar sugerencias
         btnEnviarFeedback.setOnClickListener(v -> {
-            String numero = "+56912345678";
+            String numero = "+56923670079";
             String mensaje = "Hola, tengo una sugerencia para mejorar la app.";
 
             Intent intent = new Intent(Intent.ACTION_SENDTO);

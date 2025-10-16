@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0F0F1E"
-    tools:context=".LoginActivity$HomeActivity">
+    tools:context=".HomeActivity">
 
     <!-- Barra superior moderna -->
     <com.google.android.material.appbar.AppBarLayout
@@ -212,7 +212,7 @@
                 android:textStyle="bold"
                 android:backgroundTint="#252541"
                 app:cornerRadius="16dp"
-                app:icon="@drawable/ic_maps"
+                app:icon="@drawable/ic_map"
                 app:iconTint="#FF6B35"
                 app:iconGravity="start"
                 app:iconPadding="12dp"
@@ -233,7 +233,7 @@
                 android:textStyle="bold"
                 android:backgroundTint="#252541"
                 app:cornerRadius="16dp"
-                app:icon="@drawable/ic_calendario"
+                app:icon="@drawable/ic_calenda"
                 app:iconTint="#6C63FF"
                 app:iconGravity="start"
                 app:iconPadding="12dp"

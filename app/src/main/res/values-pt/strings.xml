@@ -7,7 +7,7 @@
         <item>Francês</item>
     </string-array>
     <string name="menu_principal">Menu Principal</string>
-    <string name="bienvenido">Bem-vindo:</string>
+    <string name="bienvenido">Bem-vindo: </string>
     <string name="ir_perfil">Ir para Perfil (resultado)</string>
     <string name="abrir_web">Abrir site</string>
     <string name="enviar_correo">Enviar e-mail</string>
@@ -48,4 +48,5 @@
     <string name="calendario">Calendário</string>
     <string name="btnCerrarSesion">Sair</string>
     <string name="btnEditar">Editar perfil</string>
+    <string name="btnHome">Home</string>
 </resources>

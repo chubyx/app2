@@ -1,34 +1,19 @@
 package com.devst.app;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraCharacteristics;
-import android.hardware.camera2.CameraManager;
-import android.net.Uri;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.util.Patterns;
-
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //Creamos variables
     private EditText edtEmail, edtPass;
     private Button btnLogin;
 
@@ -38,21 +23,22 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-
         edtEmail = findViewById(R.id.edtEmail);
         edtPass  = findViewById(R.id.edtPass);
         btnLogin = findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(v -> intentoInicioSesion());
+
         findViewById(R.id.tvRecuperarpass).setOnClickListener(v ->
                 Toast.makeText(this, "Función pendiente: recuperar contraseña", Toast.LENGTH_SHORT).show());
+
         findViewById(R.id.tvCrear).setOnClickListener(v ->
                 Toast.makeText(this, "Función pendiente: crear cuenta", Toast.LENGTH_SHORT).show());
     }
 
     private void intentoInicioSesion() {
         String email = edtEmail.getText() != null ? edtEmail.getText().toString().trim() : "";
-        String pass  = edtPass.getText()  != null ? edtPass.getText().toString() : "";
+        String pass  = edtPass.getText()  != null ? edtPass.getText().toString().trim() : "";
 
         if (TextUtils.isEmpty(email)) {
             edtEmail.setError("Ingresa tu correo");
@@ -75,23 +61,25 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Simulación de login
-        boolean ok = email.equals("estudiante@st.cl") && pass.equals("123456");
+        // Leer datos desde perfil_data
+        SharedPreferences perfilPrefs = getSharedPreferences("perfil_data", MODE_PRIVATE);
+        String correoGuardado = perfilPrefs.getString("correo", "estudiante@st.cl");
+        String contrasenaGuardada = perfilPrefs.getString("contrasena", "123456");
+
+        boolean ok = email.equals(correoGuardado) && pass.equals(contrasenaGuardada);
         if (ok) {
             Toast.makeText(this, "¡Bienvenido!", Toast.LENGTH_SHORT).show();
 
-            // Ir al nuevo Activity
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            // Guardar sesión activa
+            SharedPreferences sesionPrefs = getSharedPreferences("user_session", MODE_PRIVATE);
+            sesionPrefs.edit().putBoolean("sesion_activa", true).apply();
 
-            // Enviamos el email al Home
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             intent.putExtra("email_usuario", email);
             startActivity(intent);
-
-            // Cerrar la pantalla de login para que no vuelva atrás con "Back"
             finish();
         } else {
             Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
         }
     }
-
 }

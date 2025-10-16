@@ -7,7 +7,7 @@
         <item>Français</item>
     </string-array>
     <string name="menu_principal">Menu Principal</string>
-    <string name="bienvenido">Bienvenue :</string>
+    <string name="bienvenido">Bienvenue: </string>
     <string name="ir_perfil">Aller au Profil (résultat)</string>
     <string name="abrir_web">Ouvrir le site web</string>
     <string name="enviar_correo">Envoyer un e-mail</string>
@@ -46,4 +46,6 @@
     <string name="login_failed">Échec de la connexion</string>
     <string name="btnCerrarSesion">Se déconnecter</string>
     <string name="btnEditar">Modifier le profil</string>
+    <string name="btnHome">Accueil</string>
+
 </resources>

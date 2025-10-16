@@ -51,14 +51,6 @@
             android:text="@string/actualizaciones"
             android:layout_marginBottom="16dp" />
 
-        <EditText
-            android:id="@+id/editCorreo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/correo_hint"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="16dp" />
-
         <!-- Sección: Idioma -->
         <TextView
             android:layout_width="wrap_content"
@@ -107,7 +99,7 @@
             android:id="@+id/btnHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Volver al home"
+            android:text="@string/btnHome"
             android:layout_marginBottom="32dp" />
 
     </LinearLayout>
